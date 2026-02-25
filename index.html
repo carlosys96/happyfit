@@ -275,6 +275,40 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background: #fff;
         }
+
+        /* Mejora para la Portada */
+        .portada-grid {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Maximizar el Canvas */
+        .canvas-slide-fix {
+            display: flex !important;
+            flex-direction: column;
+            padding: 15px !important; /* Reducimos espacio para que la imagen respire */
+        }
+
+        .canvas-img-container {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .canvas-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Esto evita que se corte y usa todo el ancho disponible */
+        }
         button {
             background: linear-gradient(135deg, var(--verde), #00e676);
             color: white;
@@ -349,16 +383,27 @@
     <div class="slider-container">
         
         <div class="slide slide-full active">
-            <img src="https://i0.wp.com/utd.edu.mx/wp-content/uploads/2022/07/ELEMENTOS-GRAFICOS-UTD-2022-03.png?fit=1500%2C290&ssl=1" alt="Logo" class="logo-portada" onerror="this.src='https://placehold.co/300x300/00C853/FFF?text=Happy+Fit'">
-            <!--<h2 class="slide-title">1. Portada</h2>-->
-            <ul class="content-list" style="display: flex; flex-direction: column; align-items: center;">
-                <li>UTD Maestría Desarrollo y Gestión Organizacional</li>
-                <li>Materia: Mercadotecnia Digital</li>
-                <li>Proyecto Aprendizaje Unidad Tres</li>
-                <li>Equipo: Salma Contreras, Sofia Leyva, Sergio Martínez,Jesús Orrante, Nishmet Villanueva, Alan Yañez</li>
-                <li>Docente: Dra. Francisca Sandoval Hipólito</li>
-                <li>Durango, Dgo., Febrero 2026</li>
-            </ul>
+            <img src="https://i0.wp.com/utd.edu.mx/wp-content/uploads/2022/07/ELEMENTOS-GRAFICOS-UTD-2022-03.png" alt="Logo UTD" class="logo-portada">
+            
+            <div class="portada-grid">
+                <ul class="content-list">
+                    <li><strong>Maestría:</strong> Desarrollo y Gestión Organizacional</li>
+                    <li><strong>Materia:</strong> Mercadotecnia Digital</li>
+                    <li><strong>Proyecto:</strong> Aprendizaje Unidad Tres</li>
+                </ul>
+                <ul class="content-list">
+                    <li><strong>Equipo:</strong> Salma, Sofia, Sergio, Jesús, Nishmet, Alan</li>
+                    <li><strong>Docente:</strong> Dra. Francisca Sandoval</li>
+                    <li><strong>Fecha:</strong> Febrero 2026</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide next canvas-slide-fix">
+            <h2 class="slide-title">5. Modelo CANVAS</h2>
+            <div class="canvas-img-container">
+                <img src="./Tablero Virtual Modelo de Negocios Canvas Sencillo Colorido.png" alt="Modelo Canvas">
+            </div>
         </div>
 
         <div class="slide next">
