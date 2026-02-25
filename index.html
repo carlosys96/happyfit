@@ -249,6 +249,32 @@
             z-index: 100;
         }
 
+        .canvas-slide {
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 20px !important; /* Reducimos padding para ganar espacio */
+        }
+
+        .canvas-container-full {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Evita que se salga del borde redondeado */
+        }
+
+        .canvas-image-full {
+            width: 100%;
+            height: auto;
+            max-height: 70vh; /* Ajuste para que no tape los botones inferiores */
+            object-fit: contain; /* Asegura que se vea toda la imagen sin recortarse */
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #fff;
+        }
         button {
             background: linear-gradient(135deg, var(--verde), #00e676);
             color: white;
@@ -296,6 +322,8 @@
             .slide { 
                 grid-template-columns: 1.2fr 0.8fr; /* El texto ahora tiene más espacio que la imagen */
                 gap: 20px; 
+            }.canvas-image-full {
+                max-height: 60vh;
             }
             .slide-image-wrapper { height: auto; }
             .slide-image { height: clamp(150px, 30vh, 250px); }
@@ -390,12 +418,13 @@
             </div>
         </div>
 
-        <div class="slide next slide-full">
+        <div class="slide next canvas-slide">
             <h2 class="slide-title">5. Modelo CANVAS</h2>
-            <div class="slide-image-wrapper" style="animation: none;">
-                <div class="slide-image canvas-image" style="height: clamp(250px, 45vh, 500px); border: 3px solid var(--verde); transform: none; box-shadow: none;">
-                    <img src="./Tablero Virtual Modelo de Negocios Canvas Sencillo Colorido.png" alt="Modelo Canvas Happy Fit" style="object-fit: contain; background: #fff; padding: 10px;">
-                </div>
+            <div class="canvas-container-full">
+                <img src="./Tablero Virtual Modelo de Negocios Canvas Sencillo Colorido.png" 
+                    alt="Modelo Canvas Happy Fit" 
+                    class="canvas-image-full"
+                    onerror="this.src='https://placehold.co/1200x600/FFFFFF/00C853?text=Modelo+Canvas+Happy+Fit'">
             </div>
         </div>
 
